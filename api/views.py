@@ -11,7 +11,7 @@ from .models import Todo
 def apiOverview(request):
     api_urls = {
         'List':'/todos/',
-        'Detail View':'/task-detail/<str:pk>',
+        'Detail View':'/todos/<str:pk>',
         'Create':'/task-create/',
         'Update':'/task-update/<str:pk>',
         'Delete':'/task-delete/<str:pk>',
@@ -23,3 +23,35 @@ def taskList(request):
     todos = Todo.objects.all()
     serializer = TodoSerializer(todos,many=True)
     return Response(serializer.data)
+
+@api_view(['GET'])
+def todoDetail(request,pk):
+    todos = Todo.objects.get(id=pk)
+    serializer = TodoSerializer(todos,many=False)
+    return Response(serializer.data)
+
+@api_view(['POST'])
+def todoCreate(request):
+    serializer = TodoSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    
+    return Response(serializer.data)
+
+@api_view(['POST'])
+def todoUpdate(request,pk):
+    todo = Todo.objects.get(id=pk)
+
+    serializer = TodoSerializer(instance=todo,data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    
+    return Response(serializer.data)
+
+@api_view(['DELETE'])
+def todoDelete(request,pk):
+    todo = Todo.objects.get(id=pk)
+    todo.delete()
+    
+    return Response("Item Deleted successfully")
+
