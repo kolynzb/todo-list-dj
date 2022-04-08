@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "fd228701-847e-4a72-909a-7caa53642325",
+		"name": "todolist-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Overview",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DJANGO_URL}}/api/",
+					"host": [
+						"{{DJANGO_URL}}"
+					],
+					"path": [
+						"api",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DJANGO_URL}}/api/todos/",
+					"host": [
+						"{{DJANGO_URL}}"
+					],
+					"path": [
+						"api",
+						"todos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get  todo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DJANGO_URL}}/api/todos/2",
+					"host": [
+						"{{DJANGO_URL}}"
+					],
+					"path": [
+						"api",
+						"todos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Todos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Learn django\",\r\n    \"text\":\"Will learn django at 4am\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DJANGO_URL}}/api/todos-create/",
+					"host": [
+						"{{DJANGO_URL}}"
+					],
+					"path": [
+						"api",
+						"todos-create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Todo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Buy a mackbook pro\",\r\n    \"text\":\"I want to buy a mac book at 10\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DJANGO_URL}}/api/todos-update/1",
+					"host": [
+						"{{DJANGO_URL}}"
+					],
+					"path": [
+						"api",
+						"todos-update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task Delete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Buy a mackbook pro\",\r\n    \"text\":\"I want to buy a mac book at 10\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DJANGO_URL}}/api/todos-update/1",
+					"host": [
+						"{{DJANGO_URL}}"
+					],
+					"path": [
+						"api",
+						"todos-update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
