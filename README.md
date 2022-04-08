@@ -11,3 +11,5 @@
 - [crud and serializers](https://www.youtube.com/watch?v=TmsD8QExZ84)
 
 - [django todo app](https://www.youtube.com/watch?v=W9BjUoot2Eo)
+
+- [Postman collection](./todolist-api.postman_collection.json)
