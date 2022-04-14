@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .serializers import TodoSerializer
+from .serializers import TodoSerializer, OrganizationSerializer, DistrictSerializer
 from .models import Todo
+from .extractor import  extract_excel_data
+from rest_framework.generics import ListCreateAPIView
+from todolist.settings import SHEET_FILES_FOLDER
 # Create your views here.
 
 @api_view(['GET'])
@@ -55,3 +57,17 @@ def todoDelete(request,pk):
     
     return Response("Item Deleted successfully")
 
+
+
+class CSOUploadView(ListCreateAPIView):
+     serializer_class = OrganizationSerializer
+
+     def get(self, request, format=None, **kwargs):
+        # location = (SHEET_FILES_FOLDER + "tester.xls")
+        location = (SHEET_FILES_FOLDER + "tester.xls")
+        extract_excel_data(location)
+
+        return Response({"result": "success"})
+
+
+            
