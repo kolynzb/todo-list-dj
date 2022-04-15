@@ -1,3 +1,4 @@
+from decimal import Decimal
 from unicodedata import decimal
 import xlrd
 import traceback
@@ -12,20 +13,21 @@ def extract_excel_data(location):
     """
     wb = xlrd.open_workbook(location)
     sheet = wb.sheet_by_index(0)
-    for row_number in range(0, sheet.utter_max_rows):
+    
+    # for row_number in range(2,sheet.utter_max_rows):
+    for row_number in range(2,3):
         try:
             row_data = sheet.row_values(row_number)
         except Exception as e:
-            print(e)
+            print("Error :",e)
             break
         
-        facility_name_value = row_data[0]
-        district_value = row_data[1]
-        if phone_number_value:  phone_number_value = int(row_data[2])
-        latitude = (row_data[3])
-        longitude = decimal(row_data[4])
+        facility_name_value = row_data[1]
+        district_value = row_data[6]
+        phone_number_value = (row_data[9])
+        latitude = float(row_data[13])
+        longitude = float(row_data[14])
         
-
         if not facility_name_value:
             break
 
