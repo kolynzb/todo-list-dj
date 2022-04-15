@@ -64,7 +64,7 @@ class CSOUploadView(ListCreateAPIView):
 
      def get(self, request, format=None, **kwargs):
         # location = (SHEET_FILES_FOLDER + "tester.xls")
-        location = (SHEET_FILES_FOLDER + "tester.xls")
+        location = (SHEET_FILES_FOLDER + "CSOlist.xls")
         extract_excel_data(location)
 
         return Response({"result": "success"})

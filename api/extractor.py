@@ -12,19 +12,18 @@ def extract_excel_data(location):
     """
     wb = xlrd.open_workbook(location)
     sheet = wb.sheet_by_index(0)
-
     for row_number in range(0, sheet.utter_max_rows):
         try:
             row_data = sheet.row_values(row_number)
         except Exception as e:
             print(e)
             break
-
-        facility_name_value = row_data[1]
-        district_value = row_data[2]
-        phone_number_value = int(row_data[3])
-        latitude = (row_data[4])
-        longitude = decimal(row_data[5])
+        
+        facility_name_value = row_data[0]
+        district_value = row_data[1]
+        if phone_number_value:  phone_number_value = int(row_data[2])
+        latitude = (row_data[3])
+        longitude = decimal(row_data[4])
         
 
         if not facility_name_value:
