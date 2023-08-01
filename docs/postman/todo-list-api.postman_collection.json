@@ -1,8 +1,10 @@
 {
 	"info": {
-		"_postman_id": "fd228701-847e-4a72-909a-7caa53642325",
-		"name": "todolist-api",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"_postman_id": "cac0caa0-d4a3-4785-a87e-9d0d4787768a",
+		"name": "todo-list-api",
+		"description": "Postman API Documentation for Todo List API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17845818"
 	},
 	"item": [
 		{
@@ -11,12 +13,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{DJANGO_URL}}/api/",
+					"raw": "{{DJANGO_URL}}/api/v1/",
 					"host": [
 						"{{DJANGO_URL}}"
 					],
 					"path": [
 						"api",
+						"v1",
 						""
 					]
 				}
@@ -29,12 +32,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{DJANGO_URL}}/api/todos/",
+					"raw": "{{DJANGO_URL}}/api/v1/todos/",
 					"host": [
 						"{{DJANGO_URL}}"
 					],
 					"path": [
 						"api",
+						"v1",
 						"todos",
 						""
 					]
@@ -48,14 +52,22 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{DJANGO_URL}}/api/todos/2",
+					"raw": "{{DJANGO_URL}}/api/v1/todos/:id",
 					"host": [
 						"{{DJANGO_URL}}"
 					],
 					"path": [
 						"api",
+						"v1",
 						"todos",
-						"2"
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "",
+							"description": "uuid of the todo"
+						}
 					]
 				}
 			},
@@ -76,12 +88,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{DJANGO_URL}}/api/todos-create/",
+					"raw": "{{DJANGO_URL}}//api/v1/todos-create/",
 					"host": [
 						"{{DJANGO_URL}}"
 					],
 					"path": [
+						"",
 						"api",
+						"v1",
 						"todos-create",
 						""
 					]
@@ -104,14 +118,22 @@
 					}
 				},
 				"url": {
-					"raw": "{{DJANGO_URL}}/api/todos-update/1",
+					"raw": "{{DJANGO_URL}}/api/v1/todos-update/:id",
 					"host": [
 						"{{DJANGO_URL}}"
 					],
 					"path": [
 						"api",
+						"v1",
 						"todos-update",
-						"1"
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": null,
+							"description": "the todo uuid"
+						}
 					]
 				}
 			},
@@ -132,14 +154,21 @@
 					}
 				},
 				"url": {
-					"raw": "{{DJANGO_URL}}/api/todos-update/1",
+					"raw": "{{DJANGO_URL}}/api/v1/todos-update/:id",
 					"host": [
 						"{{DJANGO_URL}}"
 					],
 					"path": [
 						"api",
+						"v1",
 						"todos-update",
-						"1"
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": null
+						}
 					]
 				}
 			},
