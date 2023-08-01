@@ -37,11 +37,17 @@ C:.
 ## Python Version
 
 - `python 3.11.0`
-- Check `runtime.txt` file
+- Check the `runtime.txt` file
 
-## Important Urls
+## Features
+- [x] API Documentation with Swagger
+- [x] CRUD Functionality
+- [x] linting with Black
+- [x] Documentation with MKDOCS
 
-After [Installation]() adn starting the server, visit the following urls
+## Important URLs
+
+After [Installation]() and starting the server, visit the following URLs
 
 1. Visit the browsable API at [http://localhost:8000/api/v1/](http://localhost:8000/api/v1/)
 
@@ -51,9 +57,7 @@ After [Installation]() adn starting the server, visit the following urls
 
 4. Visit Swagger documentation [http://localhost:8000/doc](http://localhost:8000/doc)
 
-5. To access useful links and tutorial that helped during the project [click me 😉](./tut.md)
-
-6. - `mkdocs serve` - Start the live-reloading docs server.
+5. - `mkdocs serve` - Start the live-reloading docs server.
 
 ## Concept Diagrams
 
