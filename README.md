@@ -2,7 +2,7 @@
 
 ![todo Logo](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR8oWPV84lpAndX08f9COYfNXMAuWNOEAmFA&usqp=CAU)
 
-- This is an Application Programming interface for a todo-list built in [django](https://docs.djangoproject.com/) and [django rest framework](https://www.django-rest-framework.org/) with [python](https://www.python.org/).
+- This is an Application Programming Interface for a todo-list built in [django](https://docs.djangoproject.com/) and [django rest framework](https://www.django-rest-framework.org/) with [python](https://www.python.org/).
 
 ![](https://img.shields.io/badge/python-3.11.0-red)
 ![](https://img.shields.io/badge/django-4.0.3-blue)
